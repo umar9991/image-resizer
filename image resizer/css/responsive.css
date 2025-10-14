@@ -1,0 +1,461 @@
+/* Image Resizer - Enhanced Responsive Design */
+
+/* Enhanced Mobile-First Approach */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 1rem;
+        border-radius: 1rem;
+        margin: 0;
+    }
+    
+
+    .header h1 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+    }
+
+    .upload-area {
+        padding: 1.5rem 1rem;
+        border-radius: 1rem;
+    }
+
+    .cta-text {
+        font-size: 1rem;
+    }
+
+    .drag-text {
+        font-size: 0.8rem;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .input-group {
+        gap: 0.25rem;
+    }
+
+    .input-label {
+        font-size: 0.8rem;
+        margin-left: 0.25rem;
+    }
+
+    input, select {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.85rem;
+        border-radius: 0.5rem;
+    }
+
+    .action-buttons {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    button, #downloadLink {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+        border-radius: 0.5rem;
+    }
+
+    #preview {
+        max-height: 200px;
+        border-radius: 0.75rem;
+    }
+
+    .seo-description {
+        padding: 1rem;
+        font-size: 0.8rem;
+        border-radius: 0.75rem;
+    }
+
+    footer {
+        font-size: 0.75rem;
+        padding-top: 1rem;
+    }
+
+    footer a {
+        margin: 0 0.25rem;
+    }
+
+    /* Theme toggle adjustments */
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .theme-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Progress indicator adjustments */
+    .progress-container {
+        padding: 1.5rem;
+        min-width: 240px;
+        border-radius: 1rem;
+    }
+
+    .progress-ring {
+        width: 70px;
+        height: 70px;
+    }
+
+    .progress-icon {
+        font-size: 1.5rem;
+    }
+
+    .progress-text {
+        font-size: 0.9rem;
+    }
+
+    .progress-subtext {
+        font-size: 0.75rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 360px) {
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        padding: 0.75rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .upload-area {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    .theme-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .progress-container {
+        padding: 1rem;
+        min-width: 220px;
+    }
+
+    .progress-ring {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Tablet Portrait */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 2rem 1.5rem;
+        border-radius: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .header p {
+        font-size: 1.1rem;
+    }
+
+    .upload-area {
+        padding: 2rem 1.5rem;
+    }
+
+    .controls {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .action-buttons {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    #preview {
+        max-height: 250px;
+    }
+
+    .theme-toggle {
+        width: 48px;
+        height: 48px;
+    }
+
+    .theme-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Tablet Landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 600px;
+        padding: 2.5rem;
+    }
+
+    .controls {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .action-buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop Small */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .container {
+        max-width: 700px;
+    }
+}
+
+/* Desktop Large */
+@media (min-width: 1201px) {
+    .container {
+        max-width: 800px;
+        padding: 3rem;
+    }
+
+    .header h1 {
+        font-size: 3.5rem;
+    }
+
+    .header p {
+        font-size: 1.3rem;
+    }
+
+    .upload-area {
+        padding: 3.5rem 2.5rem;
+    }
+
+    .cta-text {
+        font-size: 1.4rem;
+    }
+
+    .drag-text {
+        font-size: 1rem;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .theme-icon {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Landscape Orientation */
+@media (orientation: landscape) and (max-height: 500px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .header {
+        margin-bottom: 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+    }
+
+    .upload-area {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .controls {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .action-buttons {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    #preview {
+        max-height: 150px;
+        margin-bottom: 0.5rem;
+    }
+
+    .seo-description {
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+
+    footer {
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .theme-toggle,
+    .progress-container,
+    .overlay {
+        display: none !important;
+    }
+
+    .container {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+
+    .upload-area {
+        border: 1px solid #ccc !important;
+        background: white !important;
+    }
+
+    button, #downloadLink {
+        background: #f0f0f0 !important;
+        color: black !important;
+        border: 1px solid #ccc !important;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .hero-icon {
+        animation: none !important;
+    }
+
+    .progress-icon {
+        animation: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000000;
+        --text-primary: #000000;
+        --text-secondary: #333333;
+    }
+
+    :root.dark-mode {
+        --border-color: #ffffff;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+    }
+
+    button, #downloadLink {
+        border: 2px solid currentColor !important;
+    }
+
+    input, select {
+        border: 2px solid currentColor !important;
+    }
+}
+
+/* Focus Styles for Accessibility */
+@media (prefers-reduced-motion: no-preference) {
+    button:focus,
+    input:focus,
+    select:focus,
+    #downloadLink:focus {
+        outline: 3px solid #6366f1;
+        outline-offset: 2px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .theme-toggle {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    button, #downloadLink {
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+    }
+
+    input, select {
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+    }
+
+    .upload-area {
+        min-height: 120px;
+    }
+}
+
+/* Dark Mode Optimizations */
+@media (prefers-color-scheme: dark) {
+    :root:not(.dark-mode) {
+        --bg-main: radial-gradient(ellipse at center, #4c1d95 0%, #6b21a8 30%, #1e293b 60%, #0f172a 90%, #020617 100%);
+        --bg-card: rgba(31, 41, 55, 0.9);
+        --bg-glass: rgba(31, 41, 55, 0.7);
+        --text-primary: #ffffff;
+        --text-secondary: #e2e8f0;
+        --text-muted: #9ca3af;
+        --border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Light Mode Optimizations */
+@media (prefers-color-scheme: light) {
+    :root:not(.dark-mode) {
+        --bg-main: radial-gradient(ellipse at center, #a855f7 0%, #c084fc 30%, #e0e7ff 60%, #f1f5f9 90%, #ffffff 100%);
+        --bg-card: rgba(255, 255, 255, 0.95);
+        --bg-glass: rgba(255, 255, 255, 0.1);
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --text-muted: #9ca3af;
+        --border-color: #e5e7eb;
+    }
+}

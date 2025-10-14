@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Resizer - Resize, Crop, and Compress Images</title>
+    <meta name="description" content="Free online image resizer tool to resize, crop, rotate, and compress JPG/PNG images. Perfect for social media, websites, and email. No registration required." />
+    <meta name="keywords" content="image resizer, resize image online, compress image, rotate image, crop image, online image tool, photo resizer" />
+    <meta name="author" content="Image Resizer Pro">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:title" content="Image Resizer - Resize, Crop, and Compress Images">
+    <meta property="og:description" content="Free online image resizer tool to resize, crop, rotate, and compress JPG/PNG images. Perfect for social media, websites, and email. No registration required.">
+    <meta property="og:image" content="https://your-domain.com/resize.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-domain.com/">
+    <meta property="twitter:title" content="Image Resizer - Resize, Crop, and Compress Images">
+    <meta property="twitter:description" content="Free online image resizer tool to resize, crop, rotate, and compress JPG/PNG images. Perfect for social media, websites, and email. No registration required.">
+    <meta property="twitter:image" content="https://your-domain.com/resize.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="resize.png">
+    <link rel="apple-touch-icon" href="resize.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="css/theme.css" as="style">
+    <link rel="preload" href="js/app.js" as="script">
+    <link rel="preload" href="js/theme.js" as="script">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Structured Data -->    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Resizer",
+        "description": "Free online image resizer tool to resize, crop, rotate, and compress JPG/PNG images",
+        "url": "https://your-domain.com",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Image Resizing",
+            "Image Cropping", 
+            "Image Rotation",
+            "Image Compression",
+            "Format Conversion"
+        ],
+        "browserRequirements": "Requires JavaScript",
+        "softwareVersion": "1.0.0"
+    }
+    </script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" onclick="toggleMode()" role="button" aria-label="Toggle dark mode">
+        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" fill="#fbbf24" stroke="#f59e0b"/>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="#f59e0b"/>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="#f59e0b"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="#f59e0b"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="#f59e0b"/>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="#f59e0b"/>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="#f59e0b"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="#f59e0b"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="#f59e0b"/>
+        </svg>
+        <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#8b5cf6" stroke="#7c3aed"/>
+        </svg>
+    </div>
+
+    <!-- Progress Indicator -->
+    <div class="overlay" id="overlay"></div>
+    <div class="progress-container" id="progressContainer">
+        <div class="progress-ring">
+            <svg width="120" height="120">
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <circle class="progress-ring-circle" cx="60" cy="60" r="52"></circle>
+                <circle class="progress-ring-progress" cx="60" cy="60" r="52" 
+                        stroke-dasharray="326.73" stroke-dashoffset="326.73" id="progressCircle"></circle>
+            </svg>
+            <div class="progress-icon">🎨</div>
+        </div>
+        <div class="progress-text" id="progressText">Processing...</div>
+        <div class="progress-subtext">Please wait while we resize your image</div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo-title">
+                <img src="resize.png" alt="Image Resizer logo" class="logo" />
+                <h1>Image Resizer</h1>
+            </div>
+            <p>Resize, crop, and compress your images online for free.</p>
+        </div>
+
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="imageInput" accept="image/*" />
+            <div class="upload-content">
+                <div class="cta-text">Select Image to Resize</div>
+                <div class="drag-text">or drag and drop here</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="input-group">
+                <label class="input-label">Width (px)</label>
+                <input type="number" id="widthInput" placeholder="Width" />
+            </div>
+            <div class="input-group">
+                <label class="input-label">Height (px)</label>
+                <input type="number" id="heightInput" placeholder="Height" />
+            </div>
+            <div class="input-group">
+                <label class="input-label">Target Size</label>
+                <input type="number" id="targetSizeInput" placeholder="Size" />
+            </div>
+            <div class="input-group">
+                <label class="input-label">Unit</label>
+                <select id="unitSelect">
+                    <option value="KB">KB</option>
+                    <option value="MB">MB</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button onclick="resizeImage()">Resize Image</button>
+            <button onclick="rotateImage()" class="btn-secondary">Rotate 90°</button>
+            <button onclick="cropSquare()" class="btn-secondary">Crop to Square</button>
+        </div>
+
+        <div class="preview-section">
+            <img id="preview" alt="Resized Image Preview" />
+            <a id="downloadLink" class="btn-download" download="resized-image.jpg">Download</a>
+        </div>
+        
+        <canvas id="canvas"></canvas>
+
+        <div class="seo-description">
+            This advanced <strong>Image Resizer website</strong> is perfect for bloggers, designers, and business owners who need to optimize images for speed and SEO. Quickly reduce file sizes, adjust dimensions for Instagram, Facebook, or LinkedIn, and enhance your content's performance — all for free.
+        </div>
+        
+        <footer>
+            <a href="about.html">About Us</a> | 
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a>
+        </footer>
+    </div>
+    
+
+    <script src="js/error-handler.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

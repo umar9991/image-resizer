@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - Image Resizer Pro</title>
+    <!-- Favicon -->
+    <link rel="icon" href="resize.png">
+    <link rel="apple-touch-icon" href="resize.png">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #8b5cf6;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-light: #ffffff;
+            
+            --bg-glass: rgba(255, 255, 255, 0.95);
+            --bg-glass-dark: rgba(31, 41, 55, 0.9);
+            
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s ease-out;
+            
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: radial-gradient(ellipse at center, #a855f7 0%, #c084fc 30%, #e0e7ff 60%, #f1f5f9 90%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: var(--transition);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html.dark-mode {
+            --bg-glass-dark: rgba(31, 41, 55, 0.9);
+        }
+
+        html.dark-mode body {
+            background: radial-gradient(ellipse at center, #4c1d95 0%, #6b21a8 30%, #1e293b 60%, #0f172a 90%, #020617 100%);
+            color: var(--text-light);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 2rem;
+            padding: 3rem;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+            animation: fadeInUp 0.8s ease-out;
+            margin-bottom: 2rem;
+        }
+
+        html.dark-mode .container {
+            background: var(--bg-glass-dark);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        html.dark-mode .subtitle {
+            color: #cbd5e1;
+        }
+
+        /* Privacy Content */
+        .privacy-content {
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .privacy-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .privacy-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .privacy-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        html.dark-mode .privacy-section p {
+            color: #e2e8f0;
+        }
+
+        /* Privacy Highlights */
+        .privacy-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(34, 197, 94, 0.1));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        html.dark-mode .highlight-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(34, 197, 94, 0.2));
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .highlight-card:hover::before {
+            left: 100%;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .highlight-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .highlight-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .highlight-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        html.dark-mode .highlight-description {
+            color: #cbd5e1;
+        }
+
+        /* Security Badge */
+        .security-badge {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        html.dark-mode .security-badge {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+        }
+
+        .security-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .security-text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        html.dark-mode .security-text {
+            color: #cbd5e1;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: auto;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        html.dark-mode footer {
+            background: var(--bg-glass-dark);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        footer a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+            transform: translateY(-1px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 2rem;
+                border-radius: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .privacy-highlights {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .highlight-card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero-icon {
+                font-size: 3rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="hero-icon">🔒</span>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">
+                Your privacy and data security are our top priorities
+            </p>
+        </div>
+
+        <div class="privacy-content">
+            <div class="privacy-section">
+                <h2>🛡️ Our Privacy Commitment</h2>
+                <p>
+                    We value your privacy above all else. This tool does not collect, store, or share any of your 
+                    personal data or uploaded images. Your privacy is not just a policy for us—it's a fundamental 
+                    principle that guides everything we do.
+                </p>
+            </div>
+
+            <div class="privacy-highlights">
+                <div class="highlight-card">
+                    <span class="highlight-icon">💻</span>
+                    <h3 class="highlight-title">Local Processing</h3>
+                    <p class="highlight-description">
+                        All image processing happens entirely in your browser using JavaScript
+                    </p>
+                </div>
+
+                <div class="highlight-card">
+                    <span class="highlight-icon">🚫</span>
+                    <h3 class="highlight-title">No Server Upload</h3>
+                    <p class="highlight-description">
+                        Your images never leave your device or get uploaded to any server
+                    </p>
+                </div>
+
+                <div class="highlight-card">
+                    <span class="highlight-icon">🔐</span>
+                    <h3 class="highlight-title">Zero Data Collection</h3>
+                    <p class="highlight-description">
+                        We don't collect, track, or store any personal information whatsoever
+                    </p>
+                </div>
+
+                <div class="highlight-card">
+                    <span class="highlight-icon">👤</span>
+                    <h3 class="highlight-title">Anonymous Usage</h3>
+                    <p class="highlight-description">
+                        Use our tool completely anonymously without any registration required
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2>🔧 How It Works</h2>
+                <p>
+                    When you upload an image to our tool, it is processed entirely within your web browser using 
+                    client-side JavaScript. The image data never travels across the internet to our servers or 
+                    any third-party services. This approach ensures maximum privacy and security for your files.
+                </p>
+            </div>
+
+            <div class="security-badge">
+                <h3 class="security-title">🌐 HTTPS Security</h3>
+                <p class="security-text">
+                    For added security, make sure you only use this tool over secure HTTPS connections. 
+                    This ensures that your connection to our website is encrypted and protected.
+                </p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>📋 What We Don't Do</h2>
+                <p>
+                    We want to be crystal clear about what we don't do with your data:
+                </p>
+                <ul style="margin-left: 2rem; margin-top: 1rem; color: var(--text-secondary);">
+                    <li style="margin-bottom: 0.5rem;">We don't store your images on our servers</li>
+                    <li style="margin-bottom: 0.5rem;">We don't collect personal information</li>
+                    <li style="margin-bottom: 0.5rem;">We don't use tracking cookies or analytics</li>
+                    <li style="margin-bottom: 0.5rem;">We don't share data with third parties</li>
+                    <li style="margin-bottom: 0.5rem;">We don't require user registration or accounts</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>🔄 Updates to Privacy Policy</h2>
+                <p>
+                    If we ever make changes to this privacy policy, we will update this page with the new 
+                    information. We recommend checking this page periodically for any updates, though our 
+                    commitment to your privacy will always remain our top priority.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About Us</a> |
+        <a href="terms.html">Terms of Service</a>
+    </footer>
+
+    <script src="js/theme.js"></script>
+</body>
+</html>

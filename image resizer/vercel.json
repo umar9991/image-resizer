@@ -9,5 +9,9 @@
           }
         ]
       }
+    ],
+    "rewrites": [
+      { "source": "/", "destination": "/image%20resizer/index.html" },
+      { "source": "/(.*)", "destination": "/image%20resizer/$1" }
     ]
   }

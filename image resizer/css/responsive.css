@@ -437,7 +437,7 @@
 /* Dark Mode Optimizations */
 @media (prefers-color-scheme: dark) {
     :root:not(.dark-mode) {
-        --bg-main: radial-gradient(ellipse at center, #4c1d95 0%, #6b21a8 30%, #1e293b 60%, #0f172a 90%, #020617 100%);
+        /* --bg-main: radial-gradient(ellipse at center, #4c1d95 0%, #6b21a8 30%, #1e293b 60%, #0f172a 90%, #020617 100%); */
         --bg-card: rgba(31, 41, 55, 0.9);
         --bg-glass: rgba(31, 41, 55, 0.7);
         --text-primary: #ffffff;

@@ -137,6 +137,8 @@ body {
     width: 100%;
     max-width: 700px;
     background: var(--bg-card);
+    
+    box-shadow: 15px 0px 266px #a855f7;
     backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 2rem;
@@ -182,6 +184,7 @@ body {
     box-shadow: var(--shadow-sm);
 }
 
+
 :root.dark-mode .header h1 {
     background: linear-gradient(135deg, #8b5cf6, #c4b5fd);
     -webkit-background-clip: text;
@@ -203,6 +206,13 @@ body {
 }
 :root.dark-mode .cta-text{
     color: black;
+}
+
+
+:root.dark-mode .site-footer a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
 }
 /* Upload Area */
 .upload-area {
@@ -265,7 +275,7 @@ body {
 
 :root.dark-mode .drag-text,
 :root.dark-mode .seo-description {
-    color: black;
+    color: gray;
 }
 
 #imageInput {
@@ -353,7 +363,33 @@ button {
     position: relative;
     overflow: hidden;
 }
-
+.site-footer {
+   
+    width: 100%;
+     /* Dark glass style from your theme */
+    color: black; /* Soft light/gray text */
+    text-align: center;
+    /* padding: 12px 0; */
+    font-size: 14px;
+    /* border-top: 1px solid var(--border-color); */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  /* Footer link */
+  .site-footer a {
+    color: var(--primary-light); /* Matches theme accents */
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+  :root.dark-mode .site-footer {
+    color: white;
+}
+  
 button::before {
     content: '';
     position: absolute;
@@ -469,7 +505,7 @@ button:disabled {
     line-height: 1.6;
     margin-top: 2rem;
     padding: 1.5rem;
-    background: #ffffff; /* Solid white */
+    /* background: #ffffff; */
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -498,12 +534,15 @@ footer a:hover {
 
 
 :root.dark-mode footer a {
-    color: #8b5cf6;
+    color: white;
 }
 
 :root.dark-mode footer a:hover {
     color: #a78bfa;
 }
+ :root.dark-mode .site-footer a{
+    color: var(--primary-light);
+ }
 
 /* Progress Indicator */
 .progress-container {

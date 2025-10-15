@@ -39,7 +39,8 @@
 
         body {
             font-family: var(--font-sans);
-            background: radial-gradient(ellipse at center, #a855f7 0%, #c084fc 30%, #e0e7ff 60%, #f1f5f9 90%, #ffffff 100%);
+            
+            /* background: radial-gradient(ellipse at center, #a855f7 0%, #c084fc 30%, #e0e7ff 60%, #f1f5f9 90%, #ffffff 100%); */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -57,9 +58,14 @@
         }
 
         html.dark-mode body {
-            background: radial-gradient(ellipse at center, #4c1d95 0%, #6b21a8 30%, #1e293b 60%, #0f172a 90%, #020617 100%);
+            background:#0f172a 90%;
             color: var(--text-light);
         }
+        :root.dark-mode .site-footer a {
+            color: var(--primary-light);
+    font-size: 20px;
+    font-weight: bold;
+}
 
         /* Main Container */
         .container {
@@ -347,7 +353,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="box-shadow: 15px 0px 266px #a855f7;">
         <div class="header">
             <span class="hero-icon">🔒</span>
             <h1>Privacy Policy</h1>
@@ -447,6 +453,12 @@
         <a href="about.html">About Us</a> |
         <a href="terms.html">Terms of Service</a>
     </footer>
+
+    <div class="site-footer" style="margin-top: 20px;">
+        <p>
+            © 2025 Image Resizer | Contact: <a href="mailto:vintagegenatics@gmail.com"> vintagegenatics@gmail.com</a>
+        </p>
+      </div>
 
     <script src="js/theme.js"></script>
 </body>

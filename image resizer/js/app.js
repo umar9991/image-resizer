@@ -50,10 +50,24 @@ class ImageResizer {
         this.elements.widthInput.addEventListener('input', () => this.maintainAspectRatio('width'));
         this.elements.heightInput.addEventListener('input', () => this.maintainAspectRatio('height'));
         
-        // Theme toggle
+        // Theme toggle (handled by ThemeManager too; keep for redundancy without inline handlers)
         const themeToggle = document.querySelector('.theme-toggle');
         if (themeToggle) {
             themeToggle.addEventListener('click', () => this.toggleTheme());
+        }
+
+        // Action buttons (replacing inline onclick handlers)
+        const resizeBtn = document.getElementById('resizeBtn');
+        if (resizeBtn) {
+            resizeBtn.addEventListener('click', () => this.resizeImage());
+        }
+        const rotateBtn = document.getElementById('rotateBtn');
+        if (rotateBtn) {
+            rotateBtn.addEventListener('click', () => this.rotateImage());
+        }
+        const cropBtn = document.getElementById('cropBtn');
+        if (cropBtn) {
+            cropBtn.addEventListener('click', () => this.cropSquare());
         }
         
         // Keyboard shortcuts

@@ -164,7 +164,7 @@ class ErrorHandler {
             <div class="notification-content">
                 <span class="notification-icon">${this.getIcon(type)}</span>
                 <span class="notification-message">${message}</span>
-                <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
+                <button class="notification-close" aria-label="Close notification">×</button>
             </div>
         `;
 
@@ -236,6 +236,15 @@ class ErrorHandler {
         }
 
         document.body.appendChild(notification);
+
+        // Bind close button event to avoid inline handlers (CSP compliant)
+        const closeBtn = notification.querySelector('.notification-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                const container = closeBtn.closest('.error-notification');
+                if (container) container.remove();
+            });
+        }
 
         // Auto-remove after 5 seconds
         setTimeout(() => {
